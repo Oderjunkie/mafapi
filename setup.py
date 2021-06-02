@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
   name = 'mafapi',
   packages = ['mafapi'],
-  version = '0.1',
+  version = '0.2',
   license='GNU GPLv3',
   description = 'A simple python interfact for mafia.gg to create bots and clients.',
   author = 'Otesunkie',
