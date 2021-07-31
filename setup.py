@@ -9,7 +9,7 @@ setup(
   author = 'Otesunkie',
   author_email = 'trickytests@gmail.com',
   url = 'https://github.com/Oderjunkie/mafapi',
-  download_url = 'https://github.com/Oderjunkie/mafapi/archive/v_01.tar.gz',    # I explain this later on
+  download_url = 'https://github.com/Oderjunkie/mafapi/archive/refs/tags/v_012.tar.gz',    # I explain this later on
   keywords = ['mafia', 'bot', 'connection', 'async', 'client'],
   install_requires=[            # I get to this in a second
     'aiohttp',
