@@ -62,6 +62,10 @@ class BotBase:
             userobj, command, *args = filtered
             return await self.exec_command(userobj, command, args)
         return
+    async def update_presence(self, isPlayer):
+        return await self.sendPacket({'type': 'presence', 'isPlayer': isPlayer})
+    async def force_spec(self):
+        return await self.sendPacket({'type': 'forceSpectate'})
     async def side_effects(self, packet):
         if packet['type']=='userJoin':
             user = await self.client.mafiagg.users.find_one({
