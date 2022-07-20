@@ -70,12 +70,10 @@ class Session:
     async def joinRoom(self, room: Room):
         pointer = await self.dereferenceRoom(room)
         ws = await Connection(pointer, room.id, self)
-        await ws.send({'type':'clientHandshake', 'userId':self.user.id, 'roomId':room.id, 'auth': pointer.auth})
         return ws
     async def joinRoomById(self, roomid):
         pointer = await self.dereferenceRoomById(roomid)
         ws = await Connection(pointer, roomid, self)
-        await ws.send({'type':'clientHandshake', 'userId':self.user.id, 'roomId':roomid, 'auth': pointer.auth})
         return ws
     async def createRoom(self, roomname, unlisted):
         url = 'https://mafia.gg/api/rooms'
