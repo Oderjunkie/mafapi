@@ -90,8 +90,9 @@ class Session:
         username = user
         if type(username)!=str:
             username = user.username
+        this.hostBannedUsernames = [*this.hostBannedUsernames, username]
         return await self.session.patch('https://mafia.gg/api/user', json=
-            {'email': this.email, 'hostBannedUsernames': [*this.hostBannedUsernames, username],
+            {'email': this.email, 'hostBannedUsernames': this.hostBannedUsernames,
              'password': '', 'passwordConfirmation': '', 'patreonCode': None, 'timeFormat': this.timeFormat})
     async def getUser(self, userid):
         url = 'https://mafia.gg/api/users/{}'.format(userid)
