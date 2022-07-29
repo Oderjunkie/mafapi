@@ -44,7 +44,7 @@ class Connection:
             self.events.append(packet)
         if packet['type']=='userJoin':
             self.users.append(packet['userId'])
-        if packet['type']=='userQuit':
+        if packet['type']=='userQuit' and packet['userId'] in self.users:
             self.users.remove(packet['userId'])
         return packet
     def __enter__(self):
